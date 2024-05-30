@@ -1,0 +1,2 @@
+1. rebar3 release -> running application with vm name as defined in vm.args
+not possible to create more instances on one host -> name clash

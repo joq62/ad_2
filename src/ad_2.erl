@@ -65,6 +65,9 @@ start_link() ->
 	  ignore.
 init([]) ->
     process_flag(trap_exit, true),
+    
+    io:format("hej hopp ~p~n",[{?MODULE,?LINE}]),
+
     {ok, #state{}}.
 
 %%--------------------------------------------------------------------

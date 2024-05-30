@@ -25,7 +25,7 @@ all:
 #	mkdir ebin;		
 	rebar3 compile;	
 #	cp _build/default/lib/*/ebin/* ebin;
-#	rm -rf _build*;
+	rm -rf _build*;
 #	rm -rf ebin;
 #	git add *;
 	git status
@@ -114,12 +114,13 @@ eunit:
 	#INFO: Creating Common applications needed for testing
 	#INFO: Compile application
 	mkdir ebin;		
-	rebar3 compile;	
+	rebar3 compile;
+#	rebar3 release;		
 #	cp _build/default/lib/*/ebin/* ebin;
 #	rm -rf _build*;
 	#INFO: Starts the eunit testing .................
-	erl -pa _build/default/lib/ad_2/ebin\
-	 -pa test_ebin\
-	 -sname ad_2_a\
+	erl -pa test_ebin\
+	 -pa _build/default/lib/*/ebin\
+	 -sname test_ad_2_a\
 	 -run $(m) start\
 	 -setcookie a
